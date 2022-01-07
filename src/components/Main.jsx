@@ -1,13 +1,21 @@
 import React from 'react';
-import Text from './Text';
+import { View, StyleSheet } from "react-native";
+import AppBar from "./AppBar";
 import RepositoryList from "./RepositoryList";
+
+const styles = StyleSheet.create({
+    container: {
+        flexGrow: 1,
+        flexShrink: 1,
+    },
+});
 
 const Main = () => {
     return (
-        <>
-            <Text fontWeight="bold" fontSize="subheading">Rate Repository Application</Text>
+        <View style={styles.container}>
+            <AppBar />
             <RepositoryList />
-        </>
+        </View>
     );
 };
 
