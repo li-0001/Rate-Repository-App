@@ -5,7 +5,7 @@ import theme from "../theme";
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: theme.colors.main,
+        backgroundColor: theme.colors.appBackground,
     },
     separator: {
         height: 10
