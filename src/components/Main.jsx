@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from "react-native";
 import { Route, Switch, Redirect } from 'react-router-native';
-import { Formik } from 'formik';
 import AppBar from "./AppBar";
 import RepositoryList from "./RepositoryList";
 import SignIn from "./SignIn";
@@ -15,15 +14,6 @@ const styles = StyleSheet.create({
     },
 });
 
-const initialSignInValues = {
-    username: '',
-    password: ''
-};
-
-const onSubmit = (values) => {
-    console.log(values);
-};
-
 const Main = () => {
     return (
         <View style={styles.container}>
@@ -33,9 +23,7 @@ const Main = () => {
                     <RepositoryList />
                 </Route>
                 <Route path="/signin" exact>
-                    <Formik initialValues={initialSignInValues} onSubmit={onSubmit}>
-                        <SignIn onSubmit={onSubmit} />
-                    </Formik>
+                    <SignIn />
                 </Route>
                 <Redirect to="/" />
             </Switch>
